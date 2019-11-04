@@ -2,13 +2,13 @@
 
 <a href="https://www.npmjs.com/package/use-codemirror"><img alt="NPM" src="https://img.shields.io/npm/v/use-codemirror.svg"></a>
 
-Add CodeMirror to your React app with a hook
+**Add the excellent [CodeMirror](https://codemirror.net/) editor to your React app with a hook.**
 
-📌 Allows easy access to the underlying instance
-📌 Easily support multiple documents (e.g. for tabbed editors)
+📌 Supports multiple documents (e.g. for tabbed editors)
 📌 Built with TypeScript 
 📌 Works with SSR
 📌 Built-in lazy loading for CodeMirror itself
+📌 Allows easy access to the underlying instance
 
 ## Getting started
 
