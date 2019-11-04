@@ -1,12 +1,16 @@
 {
   "name": "use-codemirror",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hook based CodeMirror support for React",
   "author": "James K Nelson <james@jamesknelson.com>",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
   "module": "dist/es/index.js",
   "types": "dist/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesknelson/use-codemirror.git"
+  },
   "scripts": {
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=development rollup -c",
