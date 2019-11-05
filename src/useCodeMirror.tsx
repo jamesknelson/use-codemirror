@@ -215,8 +215,6 @@ class CodeMirrorInstance {
     this.docs = {}
     this.options = options
 
-    console.log(options.config.mode)
-
     const editor = (this.editor = new CodeMirror(
       (editorNode: Node) =>
         placeholderNode.parentNode!.replaceChild(editorNode, placeholderNode),
