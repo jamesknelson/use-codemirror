@@ -157,10 +157,6 @@ export function useCodeMirror(
       if (instanceRef.current) {
         instanceRef.current.dispose()
       }
-
-      delete instanceRef.current
-      delete externalRef.current
-      delete nodePromiseRef.current
     }
     // eslint-disable-next-line
   }, [])

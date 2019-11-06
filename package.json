@@ -1,6 +1,6 @@
 {
   "name": "use-codemirror",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Hook based CodeMirror support for React",
   "author": "James K Nelson <james@jamesknelson.com>",
   "license": "MIT",
