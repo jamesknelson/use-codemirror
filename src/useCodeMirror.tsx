@@ -134,7 +134,7 @@ export function useCodeMirror(
   useEffect(() => {
     const importCodeMirror = options.importCodeMirror || defaultImportCodeMirror
     const importCodeMirrorAddons =
-      options.importCodeMirrorAddons || (() => Promise.resolve())
+      options.importCodeMirrorAddons || defaultImportCodeMirrorAddons
 
     let isMounted = true
     Promise.all([
@@ -408,22 +408,30 @@ function defaultImportCodeMirror() {
       ? Promise.resolve([])
       : Promise.all([
           import('codemirror'),
-
-          import('codemirror/mode/jsx/jsx'),
-          import('codemirror/mode/css/css'),
-          import('codemirror/mode/markdown/markdown'),
-          import('codemirror/mode/htmlmixed/htmlmixed'),
-          import('codemirror/keymap/sublime'),
-          import('codemirror/addon/comment/comment'),
-          import('codemirror/addon/edit/closebrackets'),
-          import('codemirror/addon/edit/matchbrackets'),
-          import('codemirror/addon/edit/matchtags'),
-          import('codemirror/addon/fold/xml-fold'),
-          import('codemirror/addon/scroll/simplescrollbars'),
-          import('codemirror/addon/selection/active-line'),
         ])
 
   return codeMirrorPromise.then(([{ default: codeMirror }]) => codeMirror)
+}
+
+function defaultImportCodeMirrorAddons() {
+  return Promise.all([
+    import('codemirror/mode/jsx/jsx'),
+    import('codemirror/mode/css/css'),
+    import('codemirror/mode/markdown/markdown'),
+    import('codemirror/mode/htmlmixed/htmlmixed'),
+    import('codemirror/keymap/sublime'),
+    import('codemirror/addon/comment/comment'),
+    import('codemirror/addon/edit/closebrackets'),
+    import('codemirror/addon/edit/matchbrackets'),
+    import('codemirror/addon/edit/matchtags'),
+    import('codemirror/addon/fold/xml-fold'),
+    import('codemirror/addon/scroll/simplescrollbars'),
+    import('codemirror/addon/selection/active-line'),
+
+    import('codemirror/addon/search/search'),
+    import('codemirror/addon/search/searchcursor'),
+    import('codemirror/addon/dialog/dialog'),
+  ])
 }
 
 function getDefaultMode(docName?: string) {
